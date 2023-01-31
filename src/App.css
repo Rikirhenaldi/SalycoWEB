@@ -80,6 +80,32 @@ nav.navbar {
   padding: 10px 30px 10px 30px;
 }
 
+.whatsappButton{
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  bottom: 40px;
+  z-index: 9;
+  right : 20px;
+  justify-content: center;
+  align-items: center;
+}
+.whatsappFloating{
+  width: 50px;
+  height: 50px;
+}
+.orderWa{
+  font-family: "Manrope-Bold";
+  font-size: 12px;
+  padding: 4px 8px 4px 8px;
+  background-color: #1bd741;
+  color: #fff;
+  margin-right: 6px;
+  border-radius: 4px;
+}
+
+/* <<<<<<<<<<<< Home >>>>>>>>>>>> */
+
 .Home{
   background-image: url('../src/assets/image/bg2.jpg');
   background-repeat: no-repeat;
@@ -426,10 +452,12 @@ nav.navbar {
   background-color: #fff;
   padding-bottom: 30px;
   padding-top: 10px;
+  height: 220vh;
 }
 
 .modelBox{
   width: 100%;
+  height: 100%;
   border: 2px solid rgb(251 191 36);
   border-radius: 10px;
   margin-right: 30px;
@@ -440,4 +468,104 @@ nav.navbar {
 .listDescService{
   font-family: 'Poppins-Regular';
   font-size: 12px;
+}
+
+.listServiceContainer{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding-top: 30px;
+}
+
+/* <<<<<<<<< FAQ >>>>>>>> */
+
+.Faq{
+  padding-left: 100px;
+  padding-right: 100px;
+  background-color: #fff;
+  padding-bottom: 30px;
+  padding-top: 10px;
+  height: auto;
+}
+
+.accordionItem{
+  width: 100%;
+  padding-bottom: 15px;
+  padding-top: 20px;
+  border-bottom: 1px solid rgb(251 191 36);
+}
+.accordion-title{
+  font-family: "Manrope-Bold";
+  font-size: 20px;
+}
+.chevronIcon{
+  font-size: 18px;
+  color: rgb(251 191 36);
+  margin-right: 10px;
+  position: relative;
+  top: 6px;
+}
+.accordion-body{
+  font-family: "Poppins-Regular";
+  font-size: 16px;
+  margin-left: 30px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+
+/* <<<<<<<<<<< Contact >>>>>>>>>>>>> */
+
+.Contact{
+  padding-left: 100px;
+  padding-right: 100px;
+  background-color: #fff;
+  padding-bottom: 30px;
+  padding-top: 10px;
+  /* height: auto; */
+}
+.listContactWrapper{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  /* background-color: #2196F3; */
+  gap: 30px 40px;
+  padding-top: 20px;
+}
+.cardContact{
+  padding: 30px 40px 30px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgb(251 191 36);
+  border-radius: 10px;
+}
+.contactIcon{
+  width: 40px;
+  height: 40px;
+  color: rgb(251 191 36);
+}
+.contactName{
+  font-family: 'Manrope-bold';
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.contactDesc{
+  font-family: 'Poppins-Regular';
+  font-size: 16px;
+  margin-top: 10px;
+  width: 60%;
+  text-align: center;
+}
+
+.contactDesc2{
+  font-family: 'Poppins-Bold';
+  font-size: 16px;
+  margin-top: 10px;
+  width: 70%;
+  text-align: center;
+  align-items: center;
 }

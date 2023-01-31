@@ -21,7 +21,7 @@ export default function Navbar() {
         },
         {
             name: "FAQ",
-            to: 'Faq'
+            to: 'FAQ'
         },
         {
             name: "Contact",

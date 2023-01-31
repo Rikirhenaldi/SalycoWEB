@@ -25,9 +25,13 @@ import KualitasIndexIcon from '../assets/icon/kualitasIndex.png'
 import LegalitasIcon from '../assets/icon/legalitas.png'
 import PublishIcon from '../assets/icon/publish.png'
 import MesinKetik from '../assets/3D/MesinKetik.glb'
+import WhatsappIcon from '../assets/image/whatsappicon.png'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFeather, faBookJournalWhills, faPeopleGroup } from '@fortawesome/free-solid-svg-icons'
+import { faFeather, faBookJournalWhills, faPeopleGroup, faPhone, faMailBulk, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import AccordionFAQ from '../components/AccordionFAQ'
+import { Link } from 'react-router-dom'
+import Linked from 'react-scroll/modules/components/Link'
 
 export default function Home() {
     const [typeJournal, setTypeJournal] = useState([
@@ -133,47 +137,57 @@ export default function Home() {
     ])
     const [service, setService] = useState([
         {
-            name: "Publikasi Jurnal ✔",
+            name: "Publikasi Jurnal",
             description: "Bereputasi, Indexing Berkualitas International, ISSN & E-ISSN dan Support OJS",
             img: LegalitasIcon
         },
         {
-            name: "Konversi Jurnal ✔",
+            name: "Konversi Jurnal",
             description: "Bereputasi, Indexing Berkualitas International, ISSN & E-ISSN dan Support OJS",
             img: IndexingIcon
         },
         {
-            name: "Review Jurnal ✔",
+            name: "Review Jurnal",
             description: "Bereputasi, Indexing Berkualitas International, ISSN & E-ISSN dan Support OJS",
             img: KualitasIcon
         },
         {
-            name: "Pembuatan Jurnal ✔",
+            name: "Pembuatan Jurnal",
             description: "Bereputasi, Indexing Berkualitas International, ISSN & E-ISSN dan Support OJS",
             img: PublishIcon
         },
         {
-            name: "Sumbit Jurnal ✔",
+            name: "Sumbit Jurnal",
             description: "Bereputasi, Indexing Berkualitas International, ISSN & E-ISSN dan Support OJS",
             img: KualitasIndexIcon
         },
         {
-            name: "Pendampingan Jurnal ✔",
+            name: "Pendampingan Jurnal",
             description: "Bereputasi, Indexing Berkualitas International, ISSN & E-ISSN dan Support OJS",
             img: KerjasamaIcon
         },
     ])
     return (
         <div style={{ backgroundColor: '#f4f4f4' }}>
+            <Link to='https://api.whatsapp.com/send?phone=6285159228689' className='whatsappButton'>
+                <h3 className='orderWa'>Pesan Sekarang</h3>
+                <img className='whatsappFloating' src={WhatsappIcon} alt="Wa"/>
+            </Link>
             <section id='Home' className='Home w-full h-screen bg-yellow-300'>
                 <div className='HomeContainer'>
                     <div className='tagLineWrapper'>
                         {/* <h1 className='tagLine2'>Salyco</h1> */}
                         <h1 className='tagLine'>We Belive That </h1>
                         <h1 className='tagLine2'> Quality Journal is the results of the author dialectics, so Journals are compiled by Professional in their field</h1>
-                        <button className='pinkButton'>
-                            Konsultasi Sekarang
-                        </button>
+                        <Linked
+                        to="Contact"
+                        spy={true}
+                        smooth={true}
+                        offset={-70}
+                        duration={900}
+                        >
+                            <button className='pinkButton'>Konsultasi Sekarang</button>
+                        </Linked>
                     </div>
                 </div>
             </section>
@@ -223,9 +237,9 @@ export default function Home() {
             <div className='featuredContainer'>
                 <h1 className='sectionTitle'>Our <span className='specialTitle'>Partner</span></h1>
                 <div className='partnerWrapper'>
-                    <img className='partnerlogo' src={LogoGP} alt="" />
-                    <img className='partnerlogo' src={LogoJL} alt="" />
-                    <img className='partnerlogo' src={LogoRI} alt="" />
+                    <img className='partnerlogo' src={LogoGP} alt="logogp" />
+                    <img className='partnerlogo' src={LogoJL} alt="logojl" />
+                    <img className='partnerlogo' src={LogoRI} alt="logori" />
                 </div>
                 <div className='portofolio'>
                     {portofolio.map((item, index) => {
@@ -251,12 +265,12 @@ export default function Home() {
                     })}
                 </div>
                 <div className='portofolio'>
-                    <img className='partnerlogo2' src={MiniLogoEbsco} alt="" />
-                    <img className='partnerlogo2' src={MiniLogoWos} alt="" />
-                    <img className='partnerlogo2' src={MiniLogoScopus} alt="" />
-                    <img className='partnerlogo2' src={MiniLogoDoaj} alt="" />
-                    <img className='partnerlogo2' src={MiniLogoCopernicus} alt="" />
-                    <img className='partnerlogo2' src={MiniLogoScholar} alt="" />
+                    <img className='partnerlogo2' src={MiniLogoEbsco} alt="ebsco" />
+                    <img className='partnerlogo2' src={MiniLogoWos} alt="wos" />
+                    <img className='partnerlogo2' src={MiniLogoScopus} alt="scopus" />
+                    <img className='partnerlogo2' src={MiniLogoDoaj} alt="doaj" />
+                    <img className='partnerlogo2' src={MiniLogoCopernicus} alt="copernicus" />
+                    <img className='partnerlogo2' src={MiniLogoScholar} alt="scholar" />
                 </div>
             </div>
             <section id='Guarantee' className='Guarantee w-full'>
@@ -270,7 +284,7 @@ export default function Home() {
                             return (
                                 <div className='guaranteeCard'>
                                     <div className='iconGuaranteeBox'>
-                                        <img className='iconGuarantee' src={item.img} alt="" />
+                                        <img className='iconGuarantee' src={item.img} alt="guarantee" />
                                     </div>
                                     <h1 className='guaranteeName'>{item.name}</h1>
                                     <p className='guaranteeDesc'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -280,25 +294,25 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <section id='Service' className='Service w-full h-screen'>
+            <section id='Service' className='Service w-full'>
                 <div className='containerContent'>
                     <div className='badge'>Service</div>
                     <h1 className='sectionTitle'>Our <span className='specialTitle'>Service</span></h1>
                     <p className='sectionDescription'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident dolorum sit tempore ad eum id alias debitis, pariatur, ex dolores cupiditate. Ipsam alias ullam optio aspernatur vitae atque, consequuntur neque.
                     </p>
-                    <div className='listAboutContainer'>
+                    <div className='listServiceContainer'>
                         {/* <img className='bgAbout' src={Bg1} alt="bg1" /> */}
                         <div className='modelBox'>
-                        <model-viewer
-                            style={{ width: '70%', height: '100%', borderRadius: 10, marginTop: -20}}
-                            src={MesinKetik}
-                            alt="cryptocurrency"
-                            camera-controls
-                            auto-rotate
-                            loading="eager"
-                            shadow-intensity="2"
-                            ar
-                        ></model-viewer>
+                            <model-viewer
+                                style={{ width: '70%', height: '100%', borderRadius: 10, marginTop: -20 }}
+                                src={MesinKetik}
+                                alt="mesinketik"
+                                camera-controls
+                                auto-rotate
+                                loading="eager"
+                                shadow-intensity="2"
+                                ar
+                            ></model-viewer>
                         </div>
                         <div className='w-full '>
                             <h2 className='subTitle'>Paket Layanan Jurnal</h2>
@@ -324,13 +338,40 @@ export default function Home() {
                             return (
                                 <div className='guaranteeCard'>
                                     <div className='iconGuaranteeBox'>
-                                        <img className='iconGuarantee' src={item.img} alt="" />
+                                        <img className='iconGuarantee' src={item.img} alt="iconGuarantee" />
                                     </div>
                                     <h1 className='guaranteeName'>{item.name}</h1>
                                     <p className='guaranteeDesc'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                                 </div>
                             )
                         })}
+                    </div>
+                </div>
+            </section>
+            <section id='FAQ' className='Faq w-full'>
+                <div className='containerContent'>
+                    <div className='badge'>F.A.Q</div>
+                    <h1 className='sectionTitle'>Frequently Asked <span className='specialTitle'>Questions</span></h1>
+                    <AccordionFAQ />
+                </div>
+            </section>
+            <section id='Contact' className='Contact w-full h-screen bg-white'>
+                <div className='containerContent'>
+                    <div className='badge'>Contact</div>
+                    <h1 className='sectionTitle'>Contact <span className='specialTitle'>Us</span></h1>
+                    <div className='listContactWrapper'>
+                    <Link to='https://api.whatsapp.com/send?phone=6285159228689' className='cardContact'> 
+                    <FontAwesomeIcon icon={faPhone} className='contactIcon' />
+                    <h2 className='contactName'>Contact</h2>
+                    <p className='contactDesc'>Silakan hubungi kami melalui kontak telepon dan kami akan dengan senang hati membantu Anda.</p>
+                    <h2 className='contactDesc2'>+62 851-5922-8689</h2>
+                    </Link>
+                    <div className='cardContact'>
+                    <FontAwesomeIcon icon={faEnvelope} className='contactIcon' />
+                    <h2 className='contactName'>Email</h2>
+                    <p className='contactDesc'>Silakan hubungi kami melalui email formulir kontak dan kami akan dengan senang hati membantu Anda.</p>
+                    <h2 className='contactDesc2'>official@salycoketik.com</h2>
+                    </div>
                     </div>
                 </div>
             </section>
