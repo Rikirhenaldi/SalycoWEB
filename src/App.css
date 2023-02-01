@@ -872,7 +872,7 @@ nav.navbar {
     /* display: none; */
     padding-left: 30px;
     padding-right: 30px;
-    height: 165vh;
+    height: 170vh;
   }
   .guaranteeGridContainer{
     grid-template-columns: auto;
