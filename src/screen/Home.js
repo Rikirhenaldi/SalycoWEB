@@ -73,16 +73,16 @@ export default function Home() {
     ])
     const [portofolio, setPortofolio] = useState([
         {
-            name: "Judul",
-            count: 7560,
+            name: "Author",
+            count: 260,
         },
         {
-            name: "Penulis",
-            count: 7560
+            name: "Spesialis",
+            count: 560
         },
         {
-            name: "Jurnal Ilmiah",
-            count: 57
+            name: "Portofolio",
+            count: 1257
         },
         {
             name: "Kerjasama",
@@ -177,7 +177,7 @@ export default function Home() {
                 <div className='HomeContainer'>
                     <div className='tagLineWrapper'>
                         {/* <h1 className='tagLine2'>Salyco</h1> */}
-                        <h1 className='tagLine'>We Belive That </h1>
+                        <h1 className='tagLine'>We Believe That </h1>
                         <h1 className='tagLine2'> Quality Journal is the results of the author dialectics, so Journals are compiled by Professional in their field</h1>
                         <Linked
                         to="Contact"
@@ -193,12 +193,22 @@ export default function Home() {
             </section>
             <div className='boxFloatWrapper'>
                 <div className='boxFloatingHome'>
-                    {typeJournal.map((item, index) => {
+                    {portofolio.map((item, index) => {
                         return (
                             <div className={index > 2 ? "cardTypeJournalLast" : "cardTypeJournal"}>
-                                <img className='logoIndexing' src={item.img} alt={item.name} />
-                                <h1 className='typeJournal'>{item.name}</h1>
-                                <p className='typeJournalDesc'>{item.description}</p>
+                                {index === 0 ?
+                                        <img className='portoIcon' src={JudulIcon} alt="title" />
+                                        :
+                                        index === 1 ?
+                                            <FontAwesomeIcon icon={faFeather} className='portoIcon' />
+                                            :
+                                            index === 2 ?
+                                                <FontAwesomeIcon className='portoIcon' icon={faBookJournalWhills} />
+                                                :
+                                                <FontAwesomeIcon className='portoIcon2' icon={faPeopleGroup} />
+                                    }
+                                <h1 className='portoCount'>{item.count}</h1>
+                                <h2 className='portoName'>{item.name}</h2>
                             </div>
                         )
                     })}
@@ -241,8 +251,8 @@ export default function Home() {
                     <img className='partnerlogo' src={LogoJL} alt="logojl" />
                     <img className='partnerlogo' src={LogoRI} alt="logori" />
                 </div>
-                <div className='portofolio'>
-                    {portofolio.map((item, index) => {
+                {/* <div className='portofolio'>
+                   {portofolio.map((item, index) => {
                         return (
                             <div className='portoCard'>
                                 <div className='iconPortoWrapper'>
@@ -263,7 +273,7 @@ export default function Home() {
                             </div>
                         )
                     })}
-                </div>
+                </div> */}
                 <div className='portofolio'>
                     <img className='partnerlogo2' src={MiniLogoEbsco} alt="ebsco" />
                     <img className='partnerlogo2' src={MiniLogoWos} alt="wos" />
