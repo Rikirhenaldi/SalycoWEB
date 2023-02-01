@@ -54,12 +54,23 @@ nav.navbar {
   width: 100%;
   padding-top: 20px;
   padding-bottom: 10px;
-  background: white;
+  /* background: white; */
+  background: rgba(255, 255, 255, 0.2);
+  /* border-radius: 16px; */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   z-index: 10;
 }
+
 .LogoNav{
   width: 40%;
   background-color: #fff;
+}
+
+.mobileBarsIconWrapper{
+  display: none;
 }
 .navListWrapper{
   width: 60%;
@@ -110,7 +121,7 @@ nav.navbar {
   background-image: url('../src/assets/image/bg2.jpg');
   background-repeat: no-repeat;
   background-size: 100% 100vh; 
-  
+  height: 100vh;
 }
 .HomeContainer{
   width: 100%;
@@ -306,7 +317,7 @@ nav.navbar {
 }
 .featuredContainer{
   width: 100%;
-  height: 60vh;
+  height: 65vh;
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -322,9 +333,10 @@ nav.navbar {
   justify-content: space-between;
   width: 70%;
   /* background-color: #16558f; */
-  padding-top: 30px;
+  padding-top: 20px;
   padding-bottom: 30px;
   border-radius: 10px;
+  margin-bottom: 40px;
 }
 
 .partnerlogo{
@@ -457,7 +469,7 @@ nav.navbar {
   padding-left: 100px;
   padding-right: 100px;
   background-color: #fff;
-  padding-bottom: 30px;
+  padding-bottom: 60px;
   padding-top: 10px;
   height: 200vh;
 }
@@ -649,7 +661,7 @@ nav.navbar {
 }
 .footerSosmedWrapper{
   margin-top: 20px;
-  width: 25%;
+  width: 33%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -668,4 +680,323 @@ nav.navbar {
 .miniSosmedLogo{
   width: 20px;
   height: 20px;
+}
+
+
+/* <<<<<<<<<<< Responsive Mobile >>>>>>>>>>> */
+
+@media screen and (max-width: 600px) {
+
+  /* <<<<<<<<<< Navbar Mobile >>>>>>>>>>>>> */
+  nav.navbar{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .mobileBarsIconWrapper{
+    display: flex;
+    width: 30%;
+    /* background-color: #fff; */
+    justify-content: flex-end;
+  }
+  .barsIcon{
+    width: 28px;
+    height: 24px;
+    color: #fff;
+  }
+  .buttonBars{
+    width: 32px;
+    height: 30px;
+    background-color: #16558f;
+    border-radius: 4px;
+    padding-top: 2px;
+  }
+  .LogoNav{
+    width: 70%;
+  }
+  div.navListWrapper{
+    display: none;
+  }
+
+  /* <<<<<<<<<< Home Mobile >>>>>>>>>>>>> */
+
+  .whatsappButton{
+    display: none;
+  }
+
+  .Home{
+    /* display: none; */
+    background-size: 100% 70vh; 
+    height: 70vh;
+  }
+  .HomeContainer{
+    height: 70vh;
+  }
+  .tagLineWrapper{
+    width: 70%;
+    height: 70vh;
+    padding-left: 30px;
+    margin-bottom: 10px;
+  }
+  .tagLine{
+    font-size: 28px;
+  }
+  .tagLine2{
+    font-size: 14px;
+  }
+  .pinkButton{
+    margin-top: 20px;
+    font-size: 14px;
+    max-width: 100%;
+    border-radius: 4px;
+    box-shadow: 1px 2px 5px #0584d2;
+  }
+  .boxFloatWrapper{
+    width: 100%;
+    height: 80px;
+    padding-left: 30px;
+    padding-right: 30px;
+    position: relative;
+    top: -40px;
+    /* background-color: rgb(201, 37, 37); */
+  }
+  .boxFloatingHome{
+    width: 100%;
+    height: 90px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 2px 2px 6px #0583D230;
+  }
+  .cardTypeJournal{
+    height: 65px;
+    padding: 10px 25px 10px 25px;
+    border-right: 2px solid #dddddd;
+  }
+  .portoIcon{
+    width: 20px;
+    height: 20px;
+    margin-bottom: 4px;
+  }
+  .portoIcon2{
+    width: 25px;
+    height: 25px;
+    margin-bottom: 4px;
+  }
+  .portoName{
+    font-size: 10px;
+  }
+  .portoCount{
+    font-size: 16px;
+  }
+  .iconPortoWrapper{
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    top: -40px;
+    border: 2px solid #16558f;
+  }
+/* <<<<<<<<<< About Mobile >>>>>>>>>>>>> */
+  .About{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    margin-bottom: 0px;
+    height: 74vh;
+  }
+  .badge{
+    font-size: 10px;
+    color: #fff;
+    background-color: #16558f;
+    padding: 6px 16px 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .sectionTitle{
+    font-family: 'Manrope-Bold';
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+  .sectionDescription{
+    width: 100%;
+    font-family: 'Poppins-Regular';
+    font-size: 12px;
+    text-align: center;
+  }
+  .bgAbout{
+    display: none;
+  }
+  .subTitle{
+    font-size: 20px;
+    top: 0px;
+    margin-left: 10px;
+  }
+  .circleWrapper{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+  }
+  .checkIcon{
+    width: 20px;
+    height: 20px;
+  }
+  .listName{
+    font-size: 14px;
+  }
+  .listDesc{
+    font-size: 12px;
+  }
+  /* <<<<<<<< Featured Mobile >>>>>>>>> */
+  .featuredContainer{
+    /* display: none; */
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 28vh;
+  }
+  .partnerlogo{
+    width: 85px;
+    height: 20px;
+  }
+  .partnerlogo2{
+    width: 40px;
+    height: 16px;
+  }
+  .partnerWrapper{
+    padding-top: 0px;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0px;
+    width: 100%;
+  }
+
+  /* <<<<<<<<<<< Guarante Mobile >>>>>>> */
+  .Guarantee{
+    /* display: none; */
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 165vh;
+  }
+  .guaranteeGridContainer{
+    grid-template-columns: auto;
+    gap: 20px 40px;
+    padding-top: 20px;
+  }
+  .guaranteeCard{
+    border: 1px solid #16558f;
+  }
+  .iconGuaranteeBox{
+    width: 55px;
+    height: 55px;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 2px 1px 4px #0583D230;
+    margin-bottom: 10px;
+  }
+  .iconGuarantee{
+    width: 40px;
+    height: 40px;
+  }
+  .guaranteeName{
+    font-size: 14px;
+    padding-bottom: 10px;
+  }
+  .guaranteeDesc{
+    font-family: "Poppins-Regular";
+    font-size: 12px;
+  }
+
+  .Service{
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 243vh;
+  }
+  .modelBox{
+    display: none;
+  }
+
+  .Faq{
+    /* display: none; */
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .accordion-title{
+    font-size: 14px;
+    text-align: start;
+  }
+  .accordion-title:hover{
+    font-size: 14px;
+    color: #16558f;
+  }
+  .accordion-active{
+    font-size: 14px;
+  }
+  .chevronIcon{
+    font-size: 14px;
+    top: 3px;
+  }
+  .accordion-body{
+    font-size: 12px;
+  }
+/* <<<<<<<<<<<< Contact Mobile >>>>>>>>> */
+  .Contact{
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 75vh;
+  }
+  .listContactWrapper{
+    grid-template-columns: auto;
+    gap: 20px 40px;
+  }
+  .cardContact{
+    border: 1px solid #16558f;
+    border-radius: 4px;
+  }
+  .contactName{
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
+  .contactDesc{
+    font-size: 12px;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+  }
+  .contactDesc2{
+    font-size: 12px;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+  }
+/* <<<<<<<<< Footer Mobile >>>>>>>>>>>> */
+  .Footer{
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 64vh;
+  }
+  .footerContainer{
+    grid-template-columns: auto ;
+  }
+  .footerRightSide{
+    display: none;
+  }
+  .logoSample{
+    font-family: "Poppins-Bold";
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+  .footerDesc{
+    font-family: "Poppins-Regular";
+    font-size: 12px;
+    color: #fff;
+    width: 100%;
+  }
+  .footerSosmedWrapper{
+    margin-top: 20px;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
 }

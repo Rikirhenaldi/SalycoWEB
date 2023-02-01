@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import Link from 'react-scroll/modules/components/Link'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 export default function Navbar() {
     const [navList, setNavList] = useState([
@@ -34,6 +36,11 @@ export default function Navbar() {
         <nav className='navbar'>
             <div className='LogoNav'>
                 
+            </div>
+            <div className='mobileBarsIconWrapper'>
+               <button className='buttonBars'>
+                    <FontAwesomeIcon className='barsIcon' icon={faBars}/> 
+               </button>
             </div>
             <div className='navListWrapper'>
                 {

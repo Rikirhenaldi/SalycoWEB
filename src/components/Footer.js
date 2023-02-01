@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import InstagramLogo from '../assets/image/ig.png'
 import whatsappLogo from '../assets/image/whatsappicon.png'
 import LinkedinLogo from '../assets/image/linkedin.png'
+import FacebookLogo from '../assets/image/facebook.png'
+import TwitterLogo from '../assets/image/twitter.png'
 import { Link } from 'react-router-dom'
 
 export default function Footer() {
@@ -19,11 +21,18 @@ export default function Footer() {
                             <img className='miniSosmedLogo' src={InstagramLogo} alt="" />
                         </Link>
                         <Link className='miniLogoCircle' to="">
+                            <img className='miniSosmedLogo' src={FacebookLogo} alt="" />
+                        </Link>
+                        <Link className='miniLogoCircle' to="">
+                            <img className='miniSosmedLogo' src={TwitterLogo} alt="" />
+                        </Link>
+                        <Link className='miniLogoCircle' to="">
                             <img className='miniSosmedLogo' src={whatsappLogo} alt="" />
                         </Link>
                         <Link className='miniLogoCircle' to="">
                             <img className='miniSosmedLogo' src={LinkedinLogo} alt="" />
                         </Link>
+                        
                     </div>
                     <h3 className='footerDesc'>© Copyright Salyco Ketik</h3>
                     <h3 className='poweredBy mt-2'>Powered by RIKI RHENALDI</h3>

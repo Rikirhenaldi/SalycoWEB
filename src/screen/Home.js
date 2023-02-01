@@ -173,7 +173,7 @@ export default function Home() {
                 <h3 className='orderWa'>Pesan Sekarang</h3>
                 <img className='whatsappFloating' src={WhatsappIcon} alt="Wa"/>
             </Link>
-            <section id='Home' className='Home w-full h-screen bg-yellow-300'>
+            <section id='Home' className='Home w-full'>
                 <div className='HomeContainer'>
                     <div className='tagLineWrapper'>
                         {/* <h1 className='tagLine2'>Salyco</h1> */}
@@ -251,30 +251,8 @@ export default function Home() {
                     <img className='partnerlogo' src={LogoJL} alt="logojl" />
                     <img className='partnerlogo' src={LogoRI} alt="logori" />
                 </div>
-                {/* <div className='portofolio'>
-                   {portofolio.map((item, index) => {
-                        return (
-                            <div className='portoCard'>
-                                <div className='iconPortoWrapper'>
-                                    {index === 0 ?
-                                        <img className='portoIcon' src={JudulIcon} alt="title" />
-                                        :
-                                        index === 1 ?
-                                            <FontAwesomeIcon icon={faFeather} className='portoIcon' />
-                                            :
-                                            index === 2 ?
-                                                <FontAwesomeIcon className='portoIcon' icon={faBookJournalWhills} />
-                                                :
-                                                <FontAwesomeIcon className='portoIcon' icon={faPeopleGroup} />
-                                    }
-                                </div>
-                                <h1 className='portoCount'>{item.count}</h1>
-                                <h2 className='portoName'>{item.name}</h2>
-                            </div>
-                        )
-                    })}
-                </div> */}
-                <div className='portofolio'>
+                <h1 className='sectionTitle'>Our Journal <span className='specialTitle'>Indexing</span></h1>
+                <div className='partnerWrapper'>
                     <img className='partnerlogo2' src={MiniLogoEbsco} alt="ebsco" />
                     <img className='partnerlogo2' src={MiniLogoWos} alt="wos" />
                     <img className='partnerlogo2' src={MiniLogoScopus} alt="scopus" />
