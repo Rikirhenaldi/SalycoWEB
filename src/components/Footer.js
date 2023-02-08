@@ -17,19 +17,19 @@ export default function Footer() {
                     <h1 className='logoSample'>Salyco Ketik Logo</h1>
                     <p className='footerDesc'>Quality Journal is the results of the author dialectics, so Journals are compiled by Professional in their field</p>
                     <div className='footerSosmedWrapper'>
-                        <Link className='miniLogoCircle' to="">
+                        <Link className='miniLogoCircle' to="https://www.instagram.com/salycoketik_">
                             <img className='miniSosmedLogo' src={InstagramLogo} alt="" />
                         </Link>
-                        <Link className='miniLogoCircle' to="">
+                        <Link className='miniLogoCircle' to="https://www.facebook.com/salycoketik">
                             <img className='miniSosmedLogo' src={FacebookLogo} alt="" />
                         </Link>
-                        <Link className='miniLogoCircle' to="">
+                        <Link className='miniLogoCircle' to="https://twitter.com/salycoketik">
                             <img className='miniSosmedLogo' src={TwitterLogo} alt="" />
                         </Link>
-                        <Link className='miniLogoCircle' to="">
+                        <Link className='miniLogoCircle' to="https://api.whatsapp.com/send?phone=6285159228689">
                             <img className='miniSosmedLogo' src={whatsappLogo} alt="" />
                         </Link>
-                        <Link className='miniLogoCircle' to="">
+                        <Link className='miniLogoCircle' to="https://www.linkedin.com/company/salyco-ketik/">
                             <img className='miniSosmedLogo' src={LinkedinLogo} alt="" />
                         </Link>
                         

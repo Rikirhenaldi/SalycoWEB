@@ -685,7 +685,7 @@ nav.navbar {
 
 /* <<<<<<<<<<< Responsive Mobile >>>>>>>>>>> */
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
 
   /* <<<<<<<<<< Navbar Mobile >>>>>>>>>>>>> */
   nav.navbar{
@@ -720,7 +720,27 @@ nav.navbar {
   /* <<<<<<<<<< Home Mobile >>>>>>>>>>>>> */
 
   .whatsappButton{
-    display: none;
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    bottom: 30px;
+    z-index: 9;
+    right : 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  .whatsappFloating{
+    width: 40px;
+    height: 40px;
+  }
+  .orderWa{
+    font-family: "Manrope-Bold";
+    font-size: 10px;
+    padding: 2px 6px 2px 6px;
+    background-color: #1bd741;
+    color: #fff;
+    margin-right: 4px;
+    border-radius: 2px;
   }
 
   .Home{
@@ -801,6 +821,7 @@ nav.navbar {
     padding-bottom: 30px;
     margin-bottom: 0px;
     height: 74vh;
+    box-sizing: border-box;
   }
   .badge{
     font-size: 10px;
@@ -873,6 +894,7 @@ nav.navbar {
     padding-left: 30px;
     padding-right: 30px;
     height: 170vh;
+    box-sizing: border-box;
   }
   .guaranteeGridContainer{
     grid-template-columns: auto;
@@ -907,6 +929,7 @@ nav.navbar {
     padding-left: 30px;
     padding-right: 30px;
     height: 243vh;
+    box-sizing: border-box;
   }
   .modelBox{
     display: none;
@@ -916,6 +939,7 @@ nav.navbar {
     /* display: none; */
     padding-left: 30px;
     padding-right: 30px;
+    box-sizing: border-box;
   }
   .accordion-title{
     font-size: 14px;
@@ -940,6 +964,7 @@ nav.navbar {
     padding-left: 30px;
     padding-right: 30px;
     height: 75vh;
+    box-sizing: border-box;
   }
   .listContactWrapper{
     grid-template-columns: auto;
@@ -970,7 +995,7 @@ nav.navbar {
   .Footer{
     padding-left: 30px;
     padding-right: 30px;
-    height: 64vh;
+    height: 35vh;
   }
   .footerContainer{
     grid-template-columns: auto ;

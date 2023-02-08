@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useRef } from 'react'
 import '../index.css'
 import '../App.css'
 import Bg1 from '../assets/image/bg1.jpg'
@@ -32,6 +33,8 @@ import { faFeather, faBookJournalWhills, faPeopleGroup, faPhone, faMailBulk, faE
 import AccordionFAQ from '../components/AccordionFAQ'
 import { Link } from 'react-router-dom'
 import Linked from 'react-scroll/modules/components/Link'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function Home() {
     const [typeJournal, setTypeJournal] = useState([
@@ -167,24 +170,32 @@ export default function Home() {
             img: KerjasamaIcon
         },
     ])
+    useEffect(() => {
+        AOS.init();
+      }, [])
+
+      const windowSize = useRef([window.innerWidth, window.innerHeight]);
+    
     return (
         <div style={{ backgroundColor: '#f4f4f4' }}>
             <Link to='https://api.whatsapp.com/send?phone=6285159228689' className='whatsappButton'>
                 <h3 className='orderWa'>Pesan Sekarang</h3>
                 <img className='whatsappFloating' src={WhatsappIcon} alt="Wa"/>
             </Link>
-            <section id='Home' className='Home w-full'>
+            <section id='Home' className='Home w-full box-border'>
                 <div className='HomeContainer'>
                     <div className='tagLineWrapper'>
                         {/* <h1 className='tagLine2'>Salyco</h1> */}
-                        <h1 className='tagLine'>We Believe That </h1>
-                        <h1 className='tagLine2'> Quality Journal is the results of the author dialectics, so Journals are compiled by Professional in their field</h1>
+                        <h1 className='tagLine' data-aos="fade-right" data-aos-duration={1000} >We Believe That </h1>
+                        <h1 className='tagLine2'data-aos="fade-right" data-aos-duration={1400} > Quality Journal is the results of the author dialectics, so Journals are compiled by Professional in their field</h1>
                         <Linked
                         to="Contact"
                         spy={true}
                         smooth={true}
                         offset={-70}
                         duration={900}
+                        data-aos="fade-right" 
+                        data-aos-duration={1800} 
                         >
                             <button className='pinkButton'>Konsultasi Sekarang</button>
                         </Linked>
@@ -192,7 +203,7 @@ export default function Home() {
                 </div>
             </section>
             <div className='boxFloatWrapper'>
-                <div className='boxFloatingHome'>
+                <div className='boxFloatingHome' data-aos="fade-up" data-aos-duration={1000}>
                     {portofolio.map((item, index) => {
                         return (
                             <div className={index > 2 ? "cardTypeJournalLast" : "cardTypeJournal"}>
@@ -217,12 +228,12 @@ export default function Home() {
             <section id='About' className='About w-full h-screen bg-white'>
                 <div className='containerContent'>
                     <div className='badge'>About</div>
-                    <h1 className='sectionTitle'>Find Out More <span className='specialTitle'>About Us</span></h1>
-                    <p className='sectionDescription'>Salyco is Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis explicabo minus quidem eligendi, laudantium porro modi provident asperiores voluptates dolor quae cum consequuntur saepe, facere, doloremque ipsum blanditiis obcaecati? Deleniti!
+                    <h1 className='sectionTitle' data-aos="fade-right" data-aos-duration={1000}>Find Out More <span className='specialTitle'>About Us</span></h1>
+                    <p className='sectionDescription' data-aos="fade-right" data-aos-duration={1000}>Salyco is Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis explicabo minus quidem eligendi, laudantium porro modi provident asperiores voluptates dolor quae cum consequuntur saepe, facere, doloremque ipsum blanditiis obcaecati? Deleniti!
                     </p>
                     <div className='listAboutContainer'>
-                        <img className='bgAbout' src={Bg1} alt="bg1" />
-                        <div className='w-full '>
+                        <img className='bgAbout' src={Bg1} alt="bg1" data-aos="fade-right" data-aos-duration={1000}/>
+                        <div className='w-full ' data-aos={windowSize.current[0] > 1000 ? "fade-left" : "fade-up"} data-aos-duration={1000}>
                             <h2 className='subTitle'>Publikasi Terjamin</h2>
                             <ul>
                                 {aboutList.map((item) => {
@@ -247,30 +258,33 @@ export default function Home() {
             <div className='featuredContainer'>
                 <h1 className='sectionTitle'>Our <span className='specialTitle'>Partner</span></h1>
                 <div className='partnerWrapper'>
-                    <img className='partnerlogo' src={LogoGP} alt="logogp" />
-                    <img className='partnerlogo' src={LogoJL} alt="logojl" />
-                    <img className='partnerlogo' src={LogoRI} alt="logori" />
+                    <img className='partnerlogo' src={LogoGP} alt="logogp" data-aos="fade-down" data-aos-duration={500}/>
+                    <img className='partnerlogo' src={LogoJL} alt="logojl" data-aos="fade-down" data-aos-duration={1500}/>
+                    <img className='partnerlogo' src={LogoRI} alt="logori" data-aos="fade-down" data-aos-duration={2500}/>
                 </div>
                 <h1 className='sectionTitle'>Our Journal <span className='specialTitle'>Indexing</span></h1>
                 <div className='partnerWrapper'>
-                    <img className='partnerlogo2' src={MiniLogoEbsco} alt="ebsco" />
-                    <img className='partnerlogo2' src={MiniLogoWos} alt="wos" />
-                    <img className='partnerlogo2' src={MiniLogoScopus} alt="scopus" />
-                    <img className='partnerlogo2' src={MiniLogoDoaj} alt="doaj" />
-                    <img className='partnerlogo2' src={MiniLogoCopernicus} alt="copernicus" />
-                    <img className='partnerlogo2' src={MiniLogoScholar} alt="scholar" />
+                    <img className='partnerlogo2' src={MiniLogoEbsco} alt="ebsco" data-aos="fade-down" data-aos-duration={200}/>
+                    <img className='partnerlogo2' src={MiniLogoWos} alt="wos" data-aos="fade-down" data-aos-duration={500}/>
+                    <img className='partnerlogo2' src={MiniLogoScopus} alt="scopus" data-aos="fade-down" data-aos-duration={1000}/>
+                    <img className='partnerlogo2' src={MiniLogoDoaj} alt="doaj" data-aos="fade-down" data-aos-duration={1500}/>
+                    <img className='partnerlogo2' src={MiniLogoCopernicus} alt="copernicus" data-aos="fade-down" data-aos-duration={2000}/>
+                    <img className='partnerlogo2' src={MiniLogoScholar} alt="scholar" data-aos="fade-down" data-aos-duration={2500}/>
                 </div>
             </div>
             <section id='Guarantee' className='Guarantee w-full'>
                 <div className='containerContent'>
                     <div className='badge'>Guarantee</div>
-                    <h1 className='sectionTitle'>Jaminan Kualitas <span className='specialTitle'>Terbaik</span></h1>
-                    <p className='sectionDescription'>Proses Manajemen Publikasi dilakukan oleh tim professional dengan 11 tahapan mulai dari Screening naskah, Plagiarism Checker, Submit Naskah, Review Naskah, LoA, Naskah Editing, Naskah Revisi, Copy Editing, Publish, Sertifikat Licence dan Full Issue.
+                    <h1 className='sectionTitle' data-aos="fade-right" data-aos-duration={500}>Jaminan Kualitas <span className='specialTitle'>Terbaik</span></h1>
+                    <p className='sectionDescription' data-aos="fade-right" data-aos-duration={1000}>Proses Manajemen Publikasi dilakukan oleh tim professional dengan 11 tahapan mulai dari Screening naskah, Plagiarism Checker, Submit Naskah, Review Naskah, LoA, Naskah Editing, Naskah Revisi, Copy Editing, Publish, Sertifikat Licence dan Full Issue.
                     </p>
                     <div className='guaranteeGridContainer'>
                         {guarantee.map((item) => {
                             return (
-                                <div className='guaranteeCard'>
+                                <div className='guaranteeCard' 
+                                data-aos="flip-left"
+                                data-aos-easing="ease-out-cubic"
+                                data-aos-duration="2000">
                                     <div className='iconGuaranteeBox'>
                                         <img className='iconGuarantee' src={item.img} alt="guarantee" />
                                     </div>
@@ -285,12 +299,12 @@ export default function Home() {
             <section id='Service' className='Service w-full'>
                 <div className='containerContent'>
                     <div className='badge'>Service</div>
-                    <h1 className='sectionTitle'>Our <span className='specialTitle'>Service</span></h1>
-                    <p className='sectionDescription'>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident dolorum sit tempore ad eum id alias debitis, pariatur, ex dolores cupiditate. Ipsam alias ullam optio aspernatur vitae atque, consequuntur neque.
+                    <h1 className='sectionTitle' data-aos="fade-right" data-aos-duration={500}>Our <span className='specialTitle'>Service</span></h1>
+                    <p className='sectionDescription'data-aos="fade-right" data-aos-duration={1000}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident dolorum sit tempore ad eum id alias debitis, pariatur, ex dolores cupiditate. Ipsam alias ullam optio aspernatur vitae atque, consequuntur neque.
                     </p>
-                    <div className='listServiceContainer'>
+                    <div className='listServiceContainer box-border'>
                         {/* <img className='bgAbout' src={Bg1} alt="bg1" /> */}
-                        <div className='modelBox'>
+                        <div className='modelBox' data-aos="fade-right" data-aos-duration={1000}>
                             <model-viewer
                                 style={{ width: '70%', height: '100%', borderRadius: 10, marginTop: -20 }}
                                 src={MesinKetik}
@@ -302,12 +316,12 @@ export default function Home() {
                                 ar
                             ></model-viewer>
                         </div>
-                        <div className='w-full '>
+                        <div className='w-full ' data-aos={windowSize.current[0] > 1000 ? "fade-left" : "fade-up"}data-aos-duration={1000}>
                             <h2 className='subTitle'>Paket Layanan Jurnal</h2>
                             <ul>
-                                {journalService.map((item) => {
+                                {journalService.map((item,index) => {
                                     return (
-                                        <li className='itemListAbout'>
+                                        <li className='itemListAbout' data-aos={windowSize.current[0] > 1000 ? "fade-left" : "fade-up"} data-aos-duration={index === 0 ?500: index === 1 ? 1000 : 1500 }>
                                             <div className='circleWrapper'>
                                                 <img className='checkIcon' src={CheckIcon} alt="checkIcon" />
                                             </div>
@@ -324,7 +338,9 @@ export default function Home() {
                     <div className='guaranteeGridContainer'>
                         {service.map((item) => {
                             return (
-                                <div className='guaranteeCard'>
+                                <div className='guaranteeCard' data-aos="flip-left"
+                                data-aos-easing="ease-out-cubic"
+                                data-aos-duration="2000">
                                     <div className='iconGuaranteeBox'>
                                         <img className='iconGuarantee' src={item.img} alt="iconGuarantee" />
                                     </div>
@@ -339,27 +355,29 @@ export default function Home() {
             <section id='FAQ' className='Faq w-full'>
                 <div className='containerContent'>
                     <div className='badge'>F.A.Q</div>
-                    <h1 className='sectionTitle'>Frequently Asked <span className='specialTitle'>Questions</span></h1>
-                    <AccordionFAQ />
+                    <h1 className='sectionTitle' data-aos="fade-right" data-aos-duration={500}>Frequently Asked <span className='specialTitle'>Questions</span></h1>
+                    <AccordionFAQ data-aos="fade-right" data-aos-duration={400} />
                 </div>
             </section>
             <section id='Contact' className='Contact w-full h-screen bg-white'>
-                <div className='containerContent'>
+                <div className='containerContent box-border'>
                     <div className='badge'>Contact</div>
-                    <h1 className='sectionTitle'>Contact <span className='specialTitle'>Us</span></h1>
+                    <h1 className='sectionTitle' data-aos="fade-right" data-aos-duration={500}>Contact <span className='specialTitle'>Us</span></h1>
                     <div className='listContactWrapper'>
-                    <Link to='https://api.whatsapp.com/send?phone=6285159228689' className='cardContact'> 
+                    <Link to='https://api.whatsapp.com/send?phone=6285159228689' className='cardContact' data-aos={windowSize.current[0] > 1000 ? "fade-right" : "fade-up"} data-aos-duration={1000}> 
+                    {console.log('width ni bos', windowSize.current[0] )}
                     <FontAwesomeIcon icon={faPhone} className='contactIcon' />
                     <h2 className='contactName'>Contact</h2>
                     <p className='contactDesc'>Silakan hubungi kami melalui kontak telepon dan kami akan dengan senang hati membantu Anda.</p>
                     <h2 className='contactDesc2'>+62 851-5922-8689</h2>
                     </Link>
-                    <div className='cardContact'>
+                    <Link Link to='https://mail.google.com/mail/?view=cm&fs=1&to=official@salyco.com&su=Pesan Journal&body=Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium, aperiam rem assumenda blanditiis nemo placeat, necessitatibus accusantium deleniti doloribus quisquam dolor non numquam, tempora suscipit neque fugiat iusto sapiente quam?' className='cardContact' data-aos={windowSize.current[0] > 1000 ? "fade-left" : "fade-up"} data-aos-duration={1000}>
                     <FontAwesomeIcon icon={faEnvelope} className='contactIcon' />
                     <h2 className='contactName'>Email</h2>
                     <p className='contactDesc'>Silakan hubungi kami melalui email formulir kontak dan kami akan dengan senang hati membantu Anda.</p>
                     <h2 className='contactDesc2'>official@salycoketik.com</h2>
-                    </div>
+                    </Link>
+                    
                     </div>
                 </div>
             </section>
